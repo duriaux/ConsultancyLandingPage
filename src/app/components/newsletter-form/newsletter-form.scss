@@ -1,0 +1,97 @@
+@use "../../../color-variables.scss" as *;
+
+//It essentially tells SASS: "Take all the variables, mixins, and functions from this file and let me use them directly, as if they were written right here."
+// The outer wrapper aligning the columns side-by-side
+/*.card {
+// You have to write "color-variables." every single time
+background-color: color-variables.$primary-blue;
+}*/
+
+.main-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  height: 400px;
+  background-color: $bg-secondary;
+  background-color: #351686;
+
+  margin: 0 auto;
+  padding: 40px 125px;
+
+  display: flex;
+  flex-direction: row;
+  gap: 116px;/*200px AI*/
+  align-items: center;
+}
+
+// Columns share equal horizontal space
+.content-col, .form-col {
+  flex: 1;
+}
+
+// Left Content styling
+.content-col {
+  h3 {
+
+    font-size: 36px;
+    color: $primary-text;
+    font-weight: 600;
+
+    text-align: center;
+    margin-bottom: 20px;
+
+  }
+  p {
+    font-size: 16px;
+    color: mix($primary-text, #fff, 70%); // Smooth, readable text color
+    font-weight: 400;
+    line-height: 1.5;/*24/16px = 1.5 -> auto*/
+    /*margin-bottom: 87px;    color: #FFFFFF*/
+  }
+}
+
+// Right Form styling stacked in a column layout
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  .form-group {
+    //container accommodation only
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    label {
+     //the accommadation has already been designed
+      color: $primary-text;/*#FFFFFF*/
+      font-size: 16px;
+      font-weight: 500;
+
+      line-height: 1.5;
+      letter-spacing: 0;
+    }
+  }
+
+  input {
+    padding: 12px 16px; //w & h
+    border: 1.5px solid mix($primary-text, #fff, 20%);
+    border-radius: 8px;
+    outline: none;
+
+    font-size: 16px;
+
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      border-color: $primary-color;
+    }
+  }
+}
+
+
+
+
+
+
+
+

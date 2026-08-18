@@ -1,0 +1,294 @@
+
+@import "../../../color-variables.scss";
+
+:root {
+  /* Common Figma section spacings */
+  --spacing-sm: 16px;
+  --spacing-md: 32px;
+  --spacing-lg: 64px;
+  --spacing-xl: 120px; /* Big gap between main layout sections */
+}
+
+/* Apply it cleanly to your layout */
+.main-sectionx {
+  margin-bottom: var(--spacing-xl);
+}
+
+
+
+.main-section{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 80px;
+margin-bottom: 40px;
+
+}
+
+.main-section-service{
+width: 100%;
+max-width: 1298px; height: auto;
+display: flex;
+justify-content: space-between; align-items: center;
+gap: 52px;
+}
+.main-section-consulting{
+position: relative; top: 160px;
+width: 100%;
+max-width: 629px; height: auto;
+display: flex; flex-direction: column;
+align-self: flex-start;
+justify-content: end;
+gap: 8px;
+
+}
+
+span{
+font-family: "Roboto", sans-serif;
+font-weight: 700;
+font-style: Bold;
+font-size: 20px;
+line-height: 100%;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: $secondary-text;
+}
+
+h1{
+font-family: "Roboto", sans-serif;
+font-weight: 800;
+font-style: 900;
+font-size: 72px;
+line-height: 110.00000000000001%;
+letter-spacing: 0%;
+color: $primary-text;
+}
+
+
+.benefit-section{
+ display: flex; flex-direction: row;
+ align-items: center;
+ gap: 170px;
+ border: 1px dashed sandybrown;
+
+}
+
+.benefit-data{
+padding-bottom:50px;
+border-bottom:15px solid $secondary-color;}
+
+h2{
+  font-size: 60px;
+  font-family:"Roboto", sans-serif;
+  font-weight: 600;
+}
+p{
+font-size: 40px;
+font-style: italic;
+font-weight: 300;
+}
+
+.highlight {
+  /* 1. Standard gradient first, webkit as a fallback if needed */
+  background: linear-gradient(180deg, $light-primary-color, $secondary-color);
+  background: -webkit-linear-gradient(180deg, $light-primary-color, $secondary-color);
+
+  /* 2. BOTH prefixes are required for text clipping to work reliably across browsers */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 3. This tells the browser to let the background gradient show through */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback for browsers that don't support text-fill-color */
+
+  font-style: normal;
+  font-weight: 500;
+}
+
+
+.cta-section{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.cta-section-form{
+width: 100%;
+height: auto;
+
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+
+.team-section{
+position: relative;
+
+width: 1298px; height: auto;
+
+
+border: 3px solid transparent;
+background-image: linear-gradient($bg-secondary, $primary-color),
+linear-gradient(90deg,$primary-color,blue,$bg-secondary);
+background-origin: border-box;
+background-clip: padding-box, border-box;
+
+margin-inline: 90px;
+overflow: hidden;
+
+display: flex; justify-content: center; align-items: center;
+
+}
+.team-section-cols{
+position: relative;
+width: 100%;height: auto;
+
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 42px;
+}
+.team-section-support{
+
+display: flex;flex-direction: column;align-items: center;
+justify-content: center;gap:25px;
+}
+team-section-support img{
+width: 100%;
+}
+
+.team-section-content{
+width: 100%;
+max-width: 609px;
+height: 158px;
+
+
+display: flex;flex-direction: column;
+align-self: flex-start;
+gap:12px;
+
+}
+
+.team-section-content h3{
+font-size: 32px;
+font-weight: 500;
+}
+.team-section-content p{
+font-size: 16px;
+font-weight: 400;
+}
+
+.section-cta{
+ display: flex; flex-direction: column;align-items: center;
+ justify-content: center;gap: 49px;
+}
+
+.section-cta h2{
+font-family:'Roboto';
+font-weight:600;
+font-size: 36px;
+color: $primary-text;
+text-align: center
+}
+
+.footer-cta{
+width: 100%;
+max-width: 1260px;
+height: auto;
+border:5px solid transparent;
+background-image: linear-gradient($bg-secondary, $primary-color),
+linear-gradient(90deg,$primary-color,blue,$bg-secondary);
+background-origin:padding-box;
+background-clip:padding-box,border-box;
+
+padding-inline: 10px;
+
+display: flex; justify-content: center;align-items: center;
+}
+.social-media{
+width: 100%;height: 100%;
+display: flex;justify-content: space-between;align-items: center;
+}
+.image-cta{
+width: 100%;
+aspect-ratio: 16/9;
+object-fit: cover;
+}
+.logo-cta{
+display: flex; flex-direction: row; align-items: center;gap: 16px;
+
+font-family: 'Poppins', sans-serif;
+color: $primary-text;
+text-decoration: none;
+font-size: 24px;
+
+transition: transform 0.2s ease, text-shadow 0.2s ease;
+}
+.logo-cta:hover{
+transform: translateY(-1px);
+text-shadow: 0 4px 12px rgba(0,0,0,0.1)
+}
+.logo-cta:active {
+  transform: scale(0.95);
+  transition: transform 0.05s ease-out; /* Keeps the click feeling ultra-responsive */
+  opacity: 0.6;
+}
+
+.logo-cta:focus-visible {
+  outline: 2px solid #3b82f6; /* Modern brand blue */
+  outline-offset: 4px;
+  border-radius: 6px; /* Smooths out outline corners if supported */
+
+}
+.logo-cta:focus-visible {
+  outline: 3px solid #000000;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px #ffffff; /* Creates a dual-ring contrast effect */
+}
+
+.logo-cta:focus-visible {
+  outline: none;
+  border-bottom: 2px solid currentColor;
+  opacity: 0.85;
+}
+/*
+Pro Tip: Always keep standard
+:focus in mind—:focus-visible is fantastic
+because it only triggers for keyboard navigators
+(Tab key) and avoids ugly focus rings on mouse
+clicks!*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// MEDIA
+@media (min-with:1080px){
+  .main-section{
+    display: flex;flex-direction:column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .benefit-section{
+  flex-direction: column;
+}
+.section-cta{
+  font-size: 60px;
+}
+
+}
+

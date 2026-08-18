@@ -1,0 +1,16 @@
+<nav class="nav-cta">
+@for (social of socials; track social.socialNetwork) {
+
+<a
+[href]="social.url"
+target="_blank"
+ref="noopener noreferrer"
+[attr.aria-label]="social.socialNetwork"
+class="anchor-social">
+
+<img [ngSrc]="social.icon" width="50" height="50" [alt]="social.socialNetwork" [class]="social.socialNetwork.toLowerCase()">
+</a>
+
+}
+
+</nav>

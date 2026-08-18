@@ -1,0 +1,35 @@
+<!-- The main outer wrapper -->
+<div class="main-wrapper">
+
+  <!-- Left Column: Content Section -->
+  <div class="content-col">
+    <h3>Join Our Community</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac ut id urna, volutpat eget non. Aliquam lorem ante, dapibus in scelerisque id, molestie. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laborum voluptates unde minus enim corporis, accusamus vero ullam, velit error odio modi minima incidunt iste voluptatem accusantium repellendus, excepturi quaerat!</p>
+  </div>
+
+  <!-- Right Column: Form Section -->
+  <div class="form-col">
+    <form [formGroup]="newsLetterForm" class="subscribe-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input formControlName="name" type="text" id="name" placeholder="Your name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input formControlName="email" type="email" id="email" placeholder="Your email address">
+      </div>
+
+      <!-- Here is your cool new gradient CTA button! -->
+     <!--<button type="submit">Subscribe</button>-->
+     <app-button
+      (submit)="onSubmit()"
+      btn-text="Subscribe"
+      variant="secondary"
+      [disabled]="!newsLetterForm.valid"
+      [loading]="loading()"
+      ></app-button>
+    </form>
+  </div>
+
+</div>

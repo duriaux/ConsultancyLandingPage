@@ -1,0 +1,74 @@
+.nav-cta{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:5px;
+  width: 120px; /* Example size */
+  height: 120px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Soft frosted border */
+
+  /* The Glass Background and Subtle Shadow */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(8px); /* Optional: Frosted background if needed */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15); /* Soft outer shadow */
+}
+
+.nav-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* The bright, linear highlight gradient */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  /* Positions the highlight across the top-left */
+  background-position: -20px -20px;
+  background-size: 200% 200%;
+  pointer-events: none; /* Icon still clickable */
+}
+
+.instagram::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  pointer-events: none;
+
+  /* Soft pink and purple radial blend */
+  background: radial-gradient(circle, rgba(225, 48, 108, 0.4) 0%, rgba(131, 58, 180, 0.4) 70%, transparent 100%);
+
+  filter: blur(10px); /* Softens the glow edges */
+  opacity: 0.8; /* Base glow visibility */
+}
+
+.facebook::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  pointer-events: none;
+
+  /* Cool blue blend and shadow */
+  background: radial-gradient(circle, rgba(0, 101, 255, 0.4) 0%, transparent 100%);
+  box-shadow: inset 0 0 30px rgba(0, 101, 255, 0.3); /* Adds depth from inside */
+
+  filter: blur(10px);
+  opacity: 0.8;
+}

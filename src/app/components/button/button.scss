@@ -1,0 +1,75 @@
+// 1. Always import dependencies at the very top
+//@import "../../../color-variables.scss";
+
+// 1. Modern Sass load (removes the deprecation warning)
+@use "../../../color-variables.scss" as *;
+
+
+
+.btn {
+/*Sneaky trap: the ghost has gobbled up the universal styling*/
+&:disabled {
+opacity: 0.6;
+  }
+
+// 2. Use &-primary to compile to .btn-primary (or &.primary for .btn.primary)
+&-primary {
+    /* frame */
+    background: linear-gradient(180deg,  $secondary-color, $primary-color);
+    background: -webkit-linear-gradient(180deg, $primary-color, $secondary-color);
+    border-radius: 30px;
+    border: none;
+    padding: 20px 40px;
+
+    /* txt */
+    color: rgb(255, 255, 240);
+    font-size: 24px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+  }
+
+  // 3. Spelled correctly as "secondary" to match modern naming
+  /*
+  &-secondary {
+
+  background-color: aliceblue;
+  color: $primary-text;
+  font-size: 16px;
+}
+*/
+}
+
+// --- YOUR COOL GRADIENT BUTTON ---
+.btn {
+/*Sneack trap: the ghost has gobbled up the unversal styling*/
+&:disabled {
+    opacity: 0.6;
+  }
+
+  &-secondary {
+  // padding: 16px 32px;  Slightly adjusted padding to fit the form beautifully
+ /* frame */
+    padding: 20px 40px;
+    /*bg: #FFFFFF; color: #000000*/
+    background: linear-gradient(180deg, $primary-color, $secondary-color);
+    background: -webkit-linear-gradient(180deg, $primary-color, $secondary-color);
+    border-radius: 30px;
+    border: none;
+
+    /* txt */
+    color: aliceblue;
+    font-size: 18px;
+    font-weight: 700;/*bold*/
+
+    box-shadow: 0 4px 15px rgba($primary-color, 0.3); // Gives the gradient a gorgeous glow!
+    align-self: flex-start; // Keeps it from stretching completely wide
+
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+}
+
+
+
