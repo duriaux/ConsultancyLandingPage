@@ -1,5 +1,11 @@
 .app-header{
+width: 100%;
+height: auto;
+object-fit: contain;
+
 display: flex;
 justify-content: center;
+
+/*throw it away/ leftover*/
 align-items: center;
 }
