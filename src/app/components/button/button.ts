@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Auth } from '../../services/auth';
 
 type BtnVariants = "primary" | "secondary";
 
@@ -9,6 +10,8 @@ type BtnVariants = "primary" | "secondary";
   templateUrl: './button.html',
   styleUrl: './button.scss',
 })
+
+
 export class Button {
 // handing ctt val over to "btn-text/btnText"
 // btn-test string receives val then hands
@@ -28,14 +31,23 @@ export class Button {
 // Event btn
 @Output("submit") onSubmit = new EventEmitter<void>();
 
+constructor(private auth: Auth){}
+
 //emit an event
 submit(){
   this.onSubmit.emit();
   this.disabled = true;
 
-  setTimeout(() => {
-    this.disabled = false;
-  },2000)
+  this.auth.login().subscribe({
+next:(res) => {
+this.disabled = false;
+},
+error: (error) {
+this.disabled = false;
+}
+
+  });
+
 
 }
 
